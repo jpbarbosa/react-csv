@@ -1,9 +1,10 @@
 import { createContext, useState } from 'react';
+import { UnflattenedRecord } from '../types/records';
 
 type AppContextProps = {
   csvInput: string;
   setCsvInput: Function;
-  parsedData: {}[];
+  parsedData: UnflattenedRecord[];
   setParsedData: Function;
 };
 

@@ -1,10 +1,10 @@
 import { unflatten } from 'flat';
 import deepmerge from 'deepmerge';
-import { GenericRecord, GenericRecordWithChildren } from '../types/records';
+import { FlattenedRecord, UnflattenedRecord } from '../types/records';
 
 export const parseCsv = (csv: string) => {
   const rows = csv.trim().split('\n');
-  const output: GenericRecordWithChildren[] = [];
+  const output: UnflattenedRecord[] = [];
   rows.forEach((row, index) => {
     if (index === 0) {
       return;
@@ -13,7 +13,7 @@ export const parseCsv = (csv: string) => {
     const headers = rows[0].split(',');
     const values = row.split(',');
 
-    const record: GenericRecord = {};
+    const record: FlattenedRecord = {};
 
     headers.forEach((header, index) => {
       const value = values[index];
@@ -23,7 +23,7 @@ export const parseCsv = (csv: string) => {
     });
 
     // Transform/parse dot notation properties into objects
-    const unflattedRecord = unflatten<GenericRecord, GenericRecordWithChildren>(
+    const unflattedRecord = unflatten<FlattenedRecord, UnflattenedRecord>(
       record
     );
 

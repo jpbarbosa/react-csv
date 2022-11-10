@@ -12,6 +12,7 @@ export const CsvInput: React.FC = () => {
           onChange={(e) => setCsvInput(e.target.value)}
           value={csvInput}
           rows={8}
+          spellCheck={false}
         />
       </form>
     </div>

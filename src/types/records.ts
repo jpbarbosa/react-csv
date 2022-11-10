@@ -1,3 +1,3 @@
-export type GenericRecord = Record<string, string>;
+export type FlattenedRecord = Record<string, string>;
 
-export type GenericRecordWithChildren = Record<string, string | [] | {}>;
+export type UnflattenedRecord = Record<string, any>;
