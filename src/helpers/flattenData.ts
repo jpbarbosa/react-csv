@@ -19,6 +19,10 @@ export const flattenData = (data: UnflattenedRecord[]) => {
         record[key] = value;
       }
     });
+    if (maxSubItems === 0) {
+      output.push(flatten(record));
+      return;
+    }
     for (let i = 0; i < maxSubItems; i++) {
       Object.keys(subItems).forEach((key) => {
         record[`${key}.0`] = subItems[key][i];

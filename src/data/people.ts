@@ -4,6 +4,7 @@ const people = `id,name,age,country.name,children.0.name,children.0.age,cars.0.n
 1,,,,Carlos,9
 1,,,,Felipe,6
 2,Jean Pierre,54,France,Sofie,17,Citroen
-2,,,,,,Renault`;
+2,,,,,,Renault
+3,Pele,82`;
 
 export default people;
